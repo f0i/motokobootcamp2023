@@ -41,12 +41,11 @@ actor {
 }
 ```
 
-## 4. False or True: we can remove the keyword async for return argument of a query function since queries are faster to answer.
+## 4. False or True: we can remove the keyword async for return argument of a query function since queries are faster to answer
 
-**False**
+**False**, async can not be removed
 
 > An actor is similar to an object, but is different in that its state is completely isolated, its interactions with the world are entirely through asynchronous messaging, and its messages are processed one-at-a-time, even when issued in parallel by concurrent actors.
-https://internetcomputer.org/docs/current/developer-docs/build/cdks/motoko-dfinity/actors-async
+<https://internetcomputer.org/docs/current/developer-docs/build/cdks/motoko-dfinity/actors-async>
 
-
-Removing the async would result in the error `shared query function must have syntactic return type 'async <typ>'`
+Removing the `async` keyword would result in the error `shared query function must have syntactic return type 'async <typ>'`
