@@ -1,13 +1,13 @@
-import Nat "mo:base/Nat";
 import Array "mo:base/Array";
 import Error "mo:base/Error";
 import Iter "mo:base/Iter";
 import Char "mo:base/Char";
 import HashMap "mo:base/HashMap";
-import Hash "mo:base/Hash";
-import TrieSet "mo:base/TrieSet";
-import Nat32 "mo:base/Nat32";
 import Order "mo:base/Order";
+import Nat "mo:base/Nat";
+import Nat32 "mo:base/Nat32";
+
+// Day 2
 actor {
 
     // Challenge 1
@@ -57,11 +57,11 @@ actor {
                 in_word := false;
             } else if (not in_word) {
                 // beginning of a word
-                count := count + 1;
+                count += 1;
                 in_word := true;
             }; // otherwise ignore the char
         };
-        return 0;
+        return count;
     };
 
     // Challenge 5
@@ -120,16 +120,6 @@ actor {
 
     // Challenge 6
     // Write a function convert_to_binary that takes a natural number n and returns a string representing the binary representation of n.
-    func convert_to_binary_sync(n : Nat) : Text {
-        switch (n) {
-            case (0) { return "0" };
-            case (1) { return "1" };
-            case (_) {
-                return convert_to_binary_sync(n / 2) # convert_to_binary_sync(n % 2);
-            };
-        };
-    };
-
     public query func convert_to_binary(n : Nat) : async Text {
         switch (n) {
             case (0) { return "0" };
@@ -145,4 +135,20 @@ actor {
             };
         };
     };
+
+    // alternative implementation of challenge 6
+    public query func convert_to_binary_recursive(n : Nat) : async Text {
+        return convert_to_binary_sync(n);
+    };
+
+    func convert_to_binary_sync(n : Nat) : Text {
+        switch (n) {
+            case (0) { return "0" };
+            case (1) { return "1" };
+            case (_) {
+                return convert_to_binary_sync(n / 2) # convert_to_binary_sync(n % 2);
+            };
+        };
+    };
+
 };
