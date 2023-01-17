@@ -1,3 +1,4 @@
+import Float "mo:base/Float";
 actor {
 
     // Challenge 1
@@ -45,4 +46,16 @@ actor {
         return (n % 2 == 0);
         // alternative: return await test_divide(n, 2);
     };
+
+    // TedR's Homework Task 2
+    public func multiply_int(n : Int, m : Int) : async Int {
+        return (n * m);
+    };
+
+    // TedR's Homework Task 3
+    public func multiply_add_sqrt(n : Int, m : Int) : async Float {
+        let sum = Float.fromInt(n * m);
+        return Float.sqrt(sum + 10.2);
+    };
+
 };
