@@ -27,7 +27,7 @@ actor {
         var count = 0;
         for (x in t.chars()) {
             if (x == c) {
-                count := count + 1;
+                count += 1;
             };
         };
         return count;
@@ -41,7 +41,7 @@ actor {
         };
         var sum : Nat = 1;
         for (i in Iter.range(1, n)) {
-            sum := sum * i;
+            sum *= i;
         };
         return sum;
     };
@@ -78,7 +78,7 @@ actor {
             switch (seen.get(n)) {
                 case (null) {
                     seen.put(n, #once(pos));
-                    pos := pos + 1;
+                    pos += 1;
                 };
                 case (?#once(p)) {
                     seen.put(n, #multiple_times(p));
