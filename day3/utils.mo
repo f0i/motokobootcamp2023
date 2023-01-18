@@ -2,6 +2,7 @@ import Error "mo:base/Error";
 import Array "mo:base/Array";
 import Int "mo:base/Int";
 import Iter "mo:base/Iter";
+import Debug "mo:base/Debug";
 
 module Utils {
 
@@ -9,7 +10,7 @@ module Utils {
     // In your file called utils.mo: create a function called second_maximum that takes an array [Int] of integers and returns the second largest number in the array.
     public func second_maximum(array : [Int]) : Int {
         if (array.size() < 2) {
-            //TODO: throw Error.message("parameter 'array' must not be empty");
+            Debug.trap("parameter 'array' must contain at least two elements");
         };
         var max = Int.max(array[0], array[1]);
         var second_max = Int.min(array[0], array[1]);
