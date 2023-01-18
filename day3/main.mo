@@ -30,6 +30,10 @@ actor {
     // This function will create a new book based on the parameters passed and then read it before returning it.
     let book : Book.Book = { title = "asdf"; pages = 123 };
 
+    public func get_book_var() : async Book.Book {
+        return book;
+    };
+
     // Challenge 6
     // In main.mo import the type List from the Base Library and create a list that stores books.
     var books : List.List<Book.Book> = List.nil<Book.Book>();
