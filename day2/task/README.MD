@@ -1,1 +1,3 @@
-# Put the files corresponding to your task in this folder
+# Files for this task have been committed to the core project repository
+
+<https://github.com/f0i/motokobootcamp2023-coreproject>
