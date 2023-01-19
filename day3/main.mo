@@ -16,7 +16,7 @@ actor {
         return Utils.remove_even(array);
     };
 
-    // Challenge 3 (proxi, see utils.mo)
+    // Challenge 3 (proxy, see utils.mo)
     // In your file called utils.mo: write a function drop that takes 2 parameters: an array [T] and a Nat n. This function will drop the n first elements of the array and returns the remainder.
     public query func drop(xs : [Nat], n : Nat) : async [Nat] {
         return Utils.drop(xs, n);
