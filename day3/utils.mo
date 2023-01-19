@@ -12,7 +12,7 @@ module Utils {
         if (array.size() < 2) {
             Debug.trap("parameter 'array' must contain at least two elements");
         };
-        // Initialize with small values (less or equal to waht second_max will be at the end)
+        // Initialize with small values (less or equal to what second_max will be at the end)
         var max = Int.min(array[0], array[1]);
         var second_max = max;
 
