@@ -7,6 +7,7 @@ import Buffer "mo:base/Buffer";
 import Debug "mo:base/Debug";
 import Principal "mo:base/Principal";
 import HashMap "mo:base/HashMap";
+import Array "mo:base/Array";
 
 // Day 4
 actor Day4 {
@@ -56,6 +57,11 @@ actor Day4 {
             case (?i) { return i };
             case (null) { Debug.trap("Element not included") };
         };
+    };
+
+    public query func find_in_buffer_test(buf : [Nat], val : Nat) : async Nat {
+        let buffer = Buffer.fromArray<Nat>(buf);
+        return find_in_buffer(buffer, val, Nat.equal);
     };
 
     // Challenge 5
