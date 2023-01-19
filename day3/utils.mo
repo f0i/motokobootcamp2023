@@ -12,9 +12,11 @@ module Utils {
         if (array.size() < 2) {
             Debug.trap("parameter 'array' must contain at least two elements");
         };
-        var max = Int.max(array[0], array[1]);
-        var second_max = Int.min(array[0], array[1]);
+        // Initialize with small values (less or equal to waht second_max will be at the end)
+        var max = Int.min(array[0], array[1]);
+        var second_max = max;
 
+        // loop through the elements and keep track of the biggest two numbers
         for (n in array.vals()) {
             if (n > second_max) {
                 if (n > max) {
@@ -25,6 +27,7 @@ module Utils {
                 };
             };
         };
+
         return second_max;
     };
 
