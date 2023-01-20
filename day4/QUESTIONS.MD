@@ -9,7 +9,7 @@ Heap size is limited by WASM to **4GB**.
 
 ## 2. How many accounts can a unique Principal own?
 
-**almost unlimited**:
+**almost unlimited** (~ 2^32)
 > A single Principal may have control over an (almost) unlimited number of Accounts.
 
 Accounts are owned by one Principal, but a Principal can control multiple accounts.
